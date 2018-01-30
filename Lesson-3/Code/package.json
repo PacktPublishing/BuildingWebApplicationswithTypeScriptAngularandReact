@@ -1,0 +1,50 @@
+{
+	"name": "note-app",
+	"version": "1.0.0",
+	"private": true,
+	"description": "",
+	"scripts": {
+		"build": "gulp",
+		"start":
+			"npm run build && concurrently \"npm run watch\" \"npm run start:client\" \"npm run start:mongo\" \"npm run start:server\"",
+		"start:client": "http-server -P http://localhost:8800",
+		"start:server": "node dist/server",
+		"start:mongo": "mkdirp data && mongod --dbpath ./data",
+		"watch": "gulp watch"
+	},
+	"dependencies": {
+		"@angular/common": "^4.4.5",
+		"@angular/compiler": "^4.4.5",
+		"@angular/core": "^4.4.5",
+		"@angular/forms": "^4.4.5",
+		"@angular/http": "^4.4.5",
+		"@angular/platform-browser": "^4.4.5",
+		"@angular/platform-browser-dynamic": "^4.4.5",
+		"@types/mongodb": "^2.2.13",
+		"@types/node": "^8.0.44",
+		"browserify": "^14.4.0",
+		"concurrently": "^3.5.0",
+		"es6-shim": "^0.35.3",
+		"gulp-util": "^3.0.8",
+		"gulp-watch": "^4.3.11",
+		"http-server": "^0.10.0",
+		"mkdirp": "^0.5.1",
+		"mongodb": "^2.2.33",
+		"phaethon": "^0.2.0",
+		"reflect-metadata": "^0.1.10",
+		"rxjs": "^5.4.3",
+		"tsify": "^3.0.3",
+		"vinyl-source-stream": "^1.1.0",
+		"zone.js": "^0.8.18"
+	},
+	"devDependencies": {
+		"gulp": "^3.9.1",
+		"gulp-concat": "^2.6.1",
+		"gulp-sourcemaps": "^2.6.1",
+		"gulp-typescript": "^3.2.2",
+		"gulp-uglify": "^3.0.0",
+		"merge2": "^1.2.0",
+		"phaethon": "^0.2.0",
+		"typescript": "2.5.3"
+	}
+}
